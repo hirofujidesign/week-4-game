@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>simple crystal game</title>
-  <link ref=stylesheet type="text/css" src="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="javascript" type="text/javascript" href="javascript/game.js">
-
+<h1>Simple Crystal Game</h1>
 
 </head>
 <body>
@@ -20,11 +20,32 @@
 <!-- we added jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript">
-  $( document ).ready(function() {
-    var numberToGuess = 37;
+  $(document).ready(function() {
+    var numberToGuess = Math.floor((Math.random() * 100) + 1);
     var counter = 0;
-    var numbers = [10, 5, 3, 7];
+    var numbers = [1,3,5,9]
     $('#number').text(numberToGuess);
+    // var imageCrystals = {
+    // 	'blue_crystal':{
+    // 		imageCrystal:"assets/images/blue.png"
+    // 	},
+    // 	'green_crystal':{
+    // 		imageCrystal:"assets/images/green.png"
+    // 	},
+    // 	'red_crystal':{
+    // 		imageCrystal:"assets/images/red.png"
+    // 	},
+    // 	'yellow_crystal':{
+    // 		imageCrystal:"assets/iamges/yellow.png"
+    // 	},
+    // };
+
+    // var render = function (cyrstal){
+    // 	if()
+    // }
+
+
+
     for (var i=0; i< numbers.length; i++){
       var imageCrystal = $('<img>');
       
@@ -49,3 +70,14 @@
 </script>
 </body>
 </html>
+
+
+<!---    function($) {
+    $.rand = function(arg) {
+        if ($.numbers(arg)) {
+            return arg[$.rand(arg.length)];
+        } else if (typeof arg == "number") {
+            return Math.floor(Math.random() * arg);
+        } else {
+            return 4;  // chosen by fair dice roll
+        }
