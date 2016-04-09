@@ -1,26 +1,77 @@
-  $( document ).ready(function() {
-    var numberToGuess = 37;
-    var counter = 0;
-    var numbers = [10, 5, 3, 7];
-    $('#number').text(numberToGuess);
-    for (var i=0; i< numbers.length; i++){
-      var imageCrystal = $('<img>');
-      
-      imageCrystal.attr('data-num', numbers[i]);
-      imageCrystal.attr('src', 'assets/images/blue.png');
-      imageCrystal.attr('alt', 'crystals');
-      imageCrystal.addClass('crystalImage');
-      $('#crystals').append(imageCrystal);
+$( document ).ready(function() {
+
+  
+  var getTarget = function() {
+
+   targetScore = Math.floor((Math.random() * 120) + 1);
+  
+  while (targetScore < 19) {
+   targetScore = Math.floor((Math.random() * 120) + 1);
     }
-    
-    $('.crystalImage').on('click', function(){
-      counter = counter + parseInt($(this).data('num'));
-      
-      $('#yourNumber').text(counter);
-      if (counter == numberToGuess){
-        alert('You won!!!!');
-      }else if( counter > numberToGuess){
-        alert('You lost!');
-      }
+  $("#target").text("Target score: "+targetScore);  
+        }
+
+
+
+var randomize = function() {
+  
+  totalScore = 0;
+  Redvalue = Math.floor((Math.random() * 12) + 1);
+  Bluevalue = Math.floor((Math.random() * 12) + 1);
+  Yellowvalue = Math.floor((Math.random() * 12) + 1);
+  Greenvalue = Math.floor((Math.random() * 12) + 1);
+  }
+
+  getTarget();
+  randomize();
+
+  wins = 0;
+  losses = 0;
+
+  $("#wins").text("Wins: "+wins);
+  $("#losses").text("Losses: "+losses);
+
+ var checkTotal = function(currentScore) {
+  if (currentScore == targetScore) {
+  $("#winorlose").text("You win!");
+  wins++;
+  $("#wins").text("Wins: "+wins);
+  $("#total").empty();
+  getTarget();
+  randomize();
+
+
+ }
+ else if (currentScore > targetScore) {
+  $("#winorlose").text("You lose");
+  losses++;
+  $("#losses").text("Losses: "+losses);
+  $("#total").empty();
+  getTarget();
+  randomize();
+  }
+ }
+
+$("#red").on('click', function(){
+    totalScore = totalScore + Redvalue;
+    $("#total").text("Total score: "+totalScore);
+    checkTotal(totalScore);
     });
-  });
+$("#blue").on('click', function(){
+    totalScore = totalScore + Bluevalue;
+    $("#total").text("Total score: "+totalScore);
+    checkTotal(totalScore);
+    });
+ $("#yellow").on('click', function(){
+    totalScore = totalScore + Yellowvalue;
+    $("#total").text("Total score: "+totalScore);
+    checkTotal(totalScore);
+    });
+ $("#green").on('click', function(){
+    totalScore = totalScore + Greenvalue;
+    $("#total").text("Total score: "+totalScore);
+    checkTotal(totalScore);
+    });
+
+ 
+});

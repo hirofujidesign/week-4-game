@@ -1,36 +1,97 @@
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  background-repeat:;
-  text-align:center;
-  font-size:18px;
-  background-image:url(assets/images/background_img.jpg);
+  background:url(../images/back.jpg);
+}
+header {
+  float:left;
+  background-color: brown;
+  font-size:30px;
+  color:white;
+  margin-top:10px;
+  margin-left:10px;
+  margin-bottom: 10px;
+  height:50px;
+}
+#rules {
+  clear:both;
+  background-color: tan;
+  float:left;
+  color:green;
+  font-size:20px;
+  width:500px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 40px;
+}
+#main {
+  
+  float:left;
+  margin-top: 10px;
+  margin-left:10px;
+  width: 100%;
 }
 
-      /*
-          we threw in some styling to make the picture fit on the page better
-    */
-    .crystalImage {
-      width: 50px;
-      height: 50px;
-    }
-
-h1, h2, h3 {
-	font-family: 'Roboto', sans-serif;
-	text-transform: uppercase;
-   margin:5px 0;
-   color:black;
+#target {
+  float:left;
+  background-color: green;
+  width:230px;
+  font-size:30px;
+  height:100px;
+  margin-bottom: 20px;
 }
 
-h1 {
-	font-size: 36pt;
+#scoreboard {
+  float:right;
+  margin-right: 1300px;
+  background-color: teal;
+  width:60px;
+  height:100px;
 }
 
-h2 {
-	font-size: 1.6em;
+#crystals {
+  clear:both;
+  margin-top: 70px;
 }
 
-p{
-  font-size: 1.6em;
-  color:black;
-  text-decoration-color: white;
+
+img {
+  float:left;
+  margin-left:10px;
+  height:80px;
+  width:64px;
+}
+
+#box {
+  margin-left:20px;
+  margin-top:30px;
+  float:left;
+  background-color: green;
+  color:white;
+  font-size:20px;
+  width:250px;
+
+}
+
+#total {
+  clear:both;
+  background-color: green;
+  font-size:30px;
+  margin-top: 20px;
+  margin-left:20px;
+  float:left;
+  width: 230px;
+  height:100px;
+
+}
+
+#wins {
+  font-size:14px;
+  margin-top: 10px;
+  font-weight: bold;
+
+}
+
+#losses {
+  font-size:14px;
+  margin-top: 20px;
+  font-weight: bold;
 }
